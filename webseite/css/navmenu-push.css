@@ -23,7 +23,7 @@ body {
   }
   .navbar {
     right: auto;
-    background: none;
+    background-color: orange;
     border: none;
   }
 }

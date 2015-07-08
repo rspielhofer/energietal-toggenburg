@@ -2,14 +2,17 @@
  * Bootstrap v3.2.0 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- *//*! normalize.css v3.0.1 | MIT License | git.io/normalize */html{
+ *//*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+ 
+html{
 	font-family:sans-serif;
 	-webkit-text-size-adjust:100%;
 	-ms-text-size-adjust:100%
 }
 
 body{
-	margin:0
+	margin:0;
+	height: 1000px
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{
@@ -268,6 +271,28 @@ td,th{
 		border:1px solid #ddd!important
 	}
 
+}
+
+/* show map symbol as menu icon */
+.navbtn{
+	background: url("../icons/maplist.svg") no-repeat;
+	background-size:100%;
+	display: inline-block;
+	height: 200px;
+	width: 100px
+}
+.button span.icon-bar {
+    background: url(../icons/maplist.png) no-repeat;
+    float: left;
+    width: 50px;
+    height: 70px
+}
+
+.btn span.icon {
+    background: url(../icons/maplist.png) no-repeat;
+    float: left;
+    width: 10px;
+    height: 40px
 }
 
 @font-face{
@@ -1587,6 +1612,7 @@ pre code{
 .container{
 	padding-right:15px;
 	padding-left:15px;
+	margin-top: 80px;
 	margin-right:auto;
 	margin-left:auto
 }
@@ -4177,7 +4203,7 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 	z-index:1030;
 	-webkit-transform:translate3d(0,0,0);
 	-o-transform:translate3d(0,0,0);
-	transform:translate3d(0,0,0)
+	transform:translate3d(0,0,0);
 }
 
 @media (min-width:768px){
@@ -4189,7 +4215,8 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 .navbar-fixed-top{
 	top:0;
-	border-width:0 0 1px
+	border-width:0 0 1px;
+	background-color: orange
 }
 
 .navbar-fixed-bottom{
@@ -4239,6 +4266,17 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 	width:22px;
 	height:2px;
 	border-radius:1px
+}
+
+.navbar-toggle .maplisticon{
+	display:block;
+	width:22px;
+	height:2px;
+	border-radius:1px
+}
+
+.navbar-toggle .maplisticon+.maplisticon{
+	margin-top:4px
 }
 
 .navbar-toggle .icon-bar+.icon-bar{
@@ -4454,9 +4492,16 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 }
 
+/*
+.navbar-middle{
+	position: relative;
+	top: 20%;
+	transform: translateY(-20%);
+}
+*/
 .navbar-default{
 	background-color:#f8f8f8;
-	border-color:#e7e7e7
+	border-color:#e7e7e7;
 }
 
 .navbar-default .navbar-brand{
@@ -4490,6 +4535,7 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 	color:#ccc;
 	background-color:transparent
 }
+
 
 .navbar-default .navbar-toggle{
 	border-color:#ddd
@@ -6484,6 +6530,39 @@ button.close{
 .visible-xs-block,.visible-xs-inline,.visible-xs-inline-block,.visible-sm-block,.visible-sm-inline,.visible-sm-inline-block,.visible-md-block,.visible-md-inline,.visible-md-inline-block,.visible-lg-block,.visible-lg-inline,.visible-lg-inline-block{
 	display:none!important
 }
+
+
+/* ------------------------ Grüne Box um Bereiche ------------------------- */
+.contentbox { 
+	position: relative;
+	border-style: solid; 
+    border-color: #68B022; 
+	border-width: 5px; 
+	-moz-border-radius: 6px; 
+	border-radius: 6px; /* standards-compliant: (IE) */
+	width: 60%;
+	height: auto;
+	padding-top: 20px;
+	margin: 0 0;
+}
+
+.contentbox #boxtitle {
+	position: absolute;
+	font-size: 24px;
+	color: white;
+    top: -35px;
+	left: -5px;
+    display: inline; 
+    background-color: #68B022;
+	 -moz-border-radius: 6px; 
+	border-radius: 6px; /* standards-compliant: (IE) */
+	padding: 5px 20px;
+}
+
+.contentbox #content {
+}
+
+/* ------------------------------------------------------------------------------ */
 
 @media (max-width:767px){
 	.visible-xs{
