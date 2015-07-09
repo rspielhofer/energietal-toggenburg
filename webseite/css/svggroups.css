@@ -1,4 +1,28 @@
- g.hover_group:hover {
-	opacity: 0.5;
-	fill: blue;
+g.hover_group .gem_energietal  {
+	transform: scale(1);
+	transform-origin: center;
+}
+ 
+ g.hover_group  :hover {
+	opacity: 0.8;
+	fill: green;
+	color: white;
+	transform: scale(1.01);
+	transition-property: transform;
+	transition-duration: 0.2s;
+}
+
+/* Beschriftungen */
+ g.hover_group #Beschriftungen,#Beschriftung_x5F_Basiskarte {
+	font-family: "Helvetica Neue",Helvetica,Arial,"sans-serif";
+	font-size: 100%;
+}	
+
+ g.hover_group #Beschriftungen :hover {
+	textcolor: white;	
+}	
+
+/* prevents hover failure above text */
+text {
+    pointer-events: none;
 }

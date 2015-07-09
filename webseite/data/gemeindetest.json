@@ -1,0 +1,18 @@
+{"gemeinden":[
+	{
+		"name": "Wattwil",
+		"flaeche": 43.93,
+		"einwohner": 8425,
+		"url": "http://www.wattwil.ch",
+		"kontakt": "wattwil@wattwil.ch",
+		"wappen": "../images/wappen/wattwil.svg"
+	},
+	{
+		"name": "Nesslau",
+		"flaeche": 80.63,
+		"einwohner": 3333 ,
+		"url": "http://www.nesslau.ch",
+		"kontakt": "info@nesslau.ch",
+		"wappen": "../images/wappen/nesslau.png"
+	}
+]}	
