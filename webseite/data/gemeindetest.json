@@ -1,18 +1,40 @@
-{"gemeinden":[
-	{
-		"name": "Wattwil",
-		"flaeche": 43.93,
-		"einwohner": 8425,
-		"url": "http://www.wattwil.ch",
-		"kontakt": "wattwil@wattwil.ch",
-		"wappen": "../images/wappen/wattwil.svg"
-	},
-	{
-		"name": "Nesslau",
-		"flaeche": 80.63,
-		"einwohner": 3333 ,
-		"url": "http://www.nesslau.ch",
-		"kontakt": "info@nesslau.ch",
-		"wappen": "../images/wappen/nesslau.png"
-	}
-]}	
+{
+	"gemeinde":[
+		{
+			"id":	"01",
+			"name": "Bütschwil",
+			"flaeche": 13.79,
+			"einwohner": 3354,
+			"url": "http://www.buetschwil.ch",
+			"kontakt": "info@buetschwil-ganterschwil.ch",
+			"wappen": "../images/wappen/buetschwil.svg"
+		},
+		{
+			"id":	"02",
+			"name": "Ebnat-Kappel",
+			"flaeche": 43.57,
+			"einwohner": 4916,
+			"url": "http://www.ebnat-kappel.ch",
+			"kontakt": "gemeinde@ebnat-kappel.ch",
+			"wappen": "../images/wappen/ebnatkappel.png"
+		},		
+		{
+			"id":	"11",
+			"name": "Wattwil",
+			"flaeche": 43.93,
+			"einwohner": 8425,
+			"url": "http://www.wattwil.ch",
+			"kontakt": "wattwil@wattwil.ch",
+			"wappen": "../images/wappen/wattwil.svg"
+		},
+		{
+			"id":	"09",
+			"name": "Nesslau",
+			"flaeche": 80.63,
+			"einwohner": 3333 ,
+			"url": "http://www.nesslau.ch",
+			"kontakt": "info@nesslau.ch",
+			"wappen": "../images/wappen/nesslau.png"
+		}
+	]
+}	

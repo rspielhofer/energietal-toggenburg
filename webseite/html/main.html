@@ -9,7 +9,7 @@
 
 	<title>Energietal Toggenburg</title>
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<!--	<script type="text/javascript" src="../data/gemeindetest.json"></script> -->
+	<script type="text/javascript" src="gemeindetest.json"></script>
 		
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -21,6 +21,9 @@
     <!-- Styles for SVG groups -->
     <link href="../css/svggroups.css" rel="stylesheet">
 	
+	<script type="text/javascript" src="../js/datahandling.js"></script>	
+	
+	
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -29,6 +32,28 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	
+
+<!--<script>
+  var gemeinden = [];
+
+   $.getJSON('gemeindetest.json', function(data) {
+	alert("success");
+       $.each(data.gemeinde, function(i, f) {
+          var tblRow = "<tr>" + "<td>" + f.name + "</td>" +
+           "<td>" + f.flaeche + "</td>" + "<td>" + f.einwohner + "</td>" + "<td>" + f.kontakt + "</td>" + "</tr>"
+           $(tblRow).appendTo("#userdata tbody");
+     });
+
+   });
+</script>
+-->
+	
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->	
+  
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->	
+	
 </head>
 
  <body>
@@ -71,7 +96,21 @@
 		<div class="col-md-8" id="map">
 		<h3>Karte</h3> 
 			<p><svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  x="0px" y="0px"
-	 width="900px" height="900px" viewBox="0 0 841.89 595.276" preserveAspectRatio="xMinYMin meet" xml:space="preserve">
+	 width="900px" height="900px" viewBox="0 0 841.89 595.276" preserveAspectRatio="xMinYMin meet" xml:space="preserve"  onload="init(evt)">
+	
+	<script type="text/ecmascript"><![CDATA[
+		function showAttributes(event){
+			var gemObj = [];
+			var gem = event.target;
+			var theID = gem.getAttribute("id");
+			$.getJSON('gemeindetest.json', function(data) {
+			gemObj = getObjects(data, "id", theID);
+			$("#gemeindename").replaceWith('<h3 id="gemeindename">' + gemObj[0].name + '</h3>');
+			$("#gemeindewappen").replaceWith('<img src='+ gemObj[0].wappen + ' id="gemeindewappen" width="90px" ></img>');
+		});
+	   }
+
+  ]]></script>
 
 <g id="Basiskarte">
 	<defs>
@@ -10862,7 +10901,7 @@
 <g id="Die_Gemeinden">
 	<g class="hover_group" id="Energietal">
 		
-			<polygon id="Wildhaus" class="gem_energietal" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			<polygon id="12" class="gem_energietal" onclick="showAttributes(evt)" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 			461.117,356.883 471.134,357.729 471.442,357.672 471.69,357.448 471.977,357.403 472.252,357.436 472.813,357.272 
 			472.932,356.987 473.085,356.946 473.422,356.897 473.776,356.971 473.936,356.999 474.135,356.971 474.016,357.321 
 			473.937,357.557 474.003,358.038 474.048,358.536 474.205,359.086 474.566,359.717 475.118,360.11 476.961,361.733 
@@ -11042,7 +11081,7 @@
 			455.614,358.821 456.78,358.379 457.149,358.524 457.374,358.418 457.82,358.219 458.662,358.077 459.592,357.754 
 			460.481,357.379 460.835,357.167 		"/>
 		
-			<polygon id="Nesslau" class="gem_energietal" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			<polygon id="09" class="gem_energietal" onclick="showAttributes(evt)" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 			304.409,309.37 304.725,310 305.465,310.393 305.591,310.551 305.906,311.686 305.921,311.922 306.173,312.032 306.378,311.954 
 			306.52,311.844 306.961,311.67 307.134,311.764 307.307,311.907 307.496,312.206 307.512,312.411 307.638,312.567 
 			307.779,312.647 308.126,312.616 308.378,312.819 308.599,313.182 308.756,313.276 308.851,313.372 309.055,313.45 
@@ -11262,7 +11301,7 @@
 			300.425,311.497 300.583,311.024 301.056,310.741 302.079,309.795 302.678,309.45 302.835,309.528 303.386,309.45 
 			304.173,309.245 		"/>
 		
-			<polygon id="Hemberg" class="gem_energietal" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			<polygon id="03" class="gem_energietal" onclick="showAttributes(evt)" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 			322.261,258.095 322.201,258.591 322.272,259.31 321.994,259.642 322.24,259.821 322.427,260.134 322.106,261.071 322.01,261.655 
 			321.958,262.43 321.867,262.665 321.955,262.924 321.832,263.446 321.902,263.659 321.822,263.924 321.439,264.094 
 			321.243,264.288 321.215,264.475 321.303,264.639 321.313,265.032 321.366,265.274 321.041,265.655 321.057,265.678 
@@ -11383,7 +11422,7 @@
 			321.284,255.513 321.346,255.663 321.373,255.751 321.47,255.895 321.563,256.07 321.606,256.179 321.663,256.319 
 			321.721,256.523 322.216,257.886 		"/>
 		
-			<polygon id="Ebnat-Kappel" class="gem_energietal" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			<polygon id="02" class="gem_energietal" onclick="showAttributes(evt)" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 			244.558,304.108 245.842,304.04 245.854,304.309 245.877,304.799 245.851,305.213 246.161,305.739 246.565,305.93 
 			246.863,306.475 247.261,307.063 247.599,307.391 247.839,307.819 248.785,307.454 249.056,308.047 250.031,310.19 
 			251.89,313.811 252.552,313.543 254.095,312.709 255.937,312.551 257.401,312.317 259.055,312.284 259.796,312.52 
@@ -11535,7 +11574,7 @@
 			241.577,307.165 242.173,307.104 242.301,306.239 243.093,306.047 243.636,305.881 244.071,305.661 244.451,305.118 
 			243.916,304.567 243.665,304.19 		"/>
 		
-			<polygon id="Lichtensteig" class="gem_energietal" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			<polygon id="05" class="gem_energietal" onclick="showAttributes(evt)" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 			170.346,216.931 170.394,217.198 171.023,217.64 171.449,217.671 172.205,218.112 172.756,218.301 173.071,218.301 
 			174.803,219.372 175.354,219.372 175.59,219.64 175.905,219.876 176.378,219.876 178.031,220.71 181.764,222.237 182.205,222.442 
 			182.709,222.837 183.464,223.229 182.362,225.072 185.827,225.04 187.748,225.309 188.457,225.276 187.984,225.829 
@@ -11567,7 +11606,7 @@
 			166.535,215.198 167.04,215.466 167.244,215.356 167.401,215.592 167.433,215.78 168.268,216.144 169.166,216.726 
 			169.874,217.041 		"/>
 		
-			<polygon id="Wattwil" class="gem_energietal" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			<polygon id="11" class="gem_energietal" onclick="showAttributes(evt)" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 			121.271,208.992 121.744,209.229 123.507,208.961 123.98,209.071 124.657,208.882 125.602,209.229 126.075,209.149 
 			126.075,210.063 126.264,210.142 126.547,210.095 126.894,209.78 127.334,209.591 127.807,209.512 127.602,210.535 
 			128.515,211.591 128.751,211.984 128.862,212.536 128.515,213.244 128.357,213.685 127.413,215.181 127.413,215.339 
@@ -11751,7 +11790,7 @@
 			117.886,211.827 117.996,212.032 116.783,212.11 116.421,211.118 116.972,210.646 117.807,210.567 119.334,209.858 
 			119.807,209.071 120.042,208.913 120.515,208.756 121.035,208.756 		"/>
 		
-			<polygon id="Neckertal" class="gem_energietal" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			<polygon id="08" class="gem_energietal" onclick="showAttributes(evt)" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 			243.701,109.372 244.126,109.561 244.835,109.482 245.386,109.687 246.142,109.765 246.33,109.64 246.803,109.796 
 			247.511,109.718 248.142,109.529 249.134,110.08 250.236,110.238 250.819,110.08 251.339,110.553 251.37,110.663 251.261,110.946 
 			251.212,111.419 251.417,111.891 251.496,112.71 251.023,113.703 250.977,114.175 250.315,114.805 250.188,115.12 
@@ -11960,7 +11999,7 @@
 			241.212,110.001 241.449,109.844 241.764,110.238 242.047,110.238 242.362,109.875 242.945,109.718 243.181,109.561 
 			243.339,109.372 		"/>
 		
-			<polygon id="Oberhelfenschwil" class="gem_energietal" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			<polygon id="10" class="gem_energietal" onclick="showAttributes(evt)" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 			201.654,153.498 201.754,153.538 202.123,153.538 202.553,153.472 202.652,153.44 202.952,153.35 203.25,153.265 203.45,153.241 
 			203.77,153.229 204.139,153.295 204.515,153.386 204.629,153.361 204.908,153.332 205.296,153.437 205.654,153.606 
 			205.722,153.878 205.767,153.938 205.763,153.972 205.563,154.239 205.453,154.295 205.24,154.369 205.025,154.391 
@@ -12076,7 +12115,7 @@
 			195.433,152.437 195.364,152.781 195.324,153.126 195.809,153.146 196.357,153.119 196.567,153.155 196.857,153.587 
 			197.118,153.891 198.929,154.175 200.189,154.017 200.63,154.049 201.102,153.938 		"/>
 		
-			<polygon id="Bütschwil" class="gem_energietal" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			<polygon id="01" class="gem_energietal" onclick="showAttributes(evt)" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 			162.156,113.946 162.943,114.371 163.573,114.339 163.807,114.294 166.69,113.284 167.524,113.136 168.146,113.146 
 			168.578,113.446 168.97,113.82 169.047,114.177 168.599,115.427 168.233,116.988 168.25,117.574 168.483,118.114 169.857,119.841 
 			169.845,120.324 169.559,120.735 168.307,121.685 168.017,121.998 167.896,122.248 167.894,122.639 168.157,122.976 
@@ -12182,7 +12221,7 @@
 			159.105,114.049 158.852,113.085 158.849,112.135 159.432,111.221 159.747,111.111 160.534,111.505 161.243,112.166 
 			161.636,112.402 161.841,112.844 161.952,113.426 		"/>
 		
-			<polygon id="Lütisburg" class="gem_energietal" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			<polygon id="06" class="gem_energietal" onclick="showAttributes(evt)" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 			203.122,89.162 203.526,89.961 203.913,90.381 204.554,90.892 204.882,91.262 205.685,92.298 206.33,92.749 206.929,92.947 
 			209.921,92.993 213.701,92.442 216.337,92.173 217.07,92.072 217.513,91.967 217.877,91.81 217.966,92.158 217.707,92.23 
 			217.755,92.417 217.792,92.633 217.906,93.021 217.995,93.208 218.138,93.292 218.155,93.364 218.181,93.477 218.225,93.671 
@@ -12260,7 +12299,7 @@
 			185.386,90.505 187.354,90.71 188.378,90.71 189.764,90.474 190.74,90.033 192.314,89.135 197.197,86.962 199.874,86.064 
 			200.709,86.175 201.606,86.49 		"/>
 		
-			<polygon id="Mosnang" class="gem_energietal" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			<polygon id="07" class="gem_energietal" onclick="showAttributes(evt)" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 			134.992,127.041 132.079,127.907 132.079,128.694 130.315,129.167 130.236,130.348 129.764,131.34 130.315,131.923 
 			129.874,132.285 128.977,132.521 128.897,132.364 128.031,132.521 127.748,132.632 128.142,133.34 127.748,133.624 
 			128.063,134.096 127.276,134.253 126.378,134.521 127.087,135.939 126.614,136.096 127.59,138.269 128.614,137.561 
@@ -12377,7 +12416,7 @@
 			136.929,120.505 134.834,123.418 133.811,123.781 132.756,122.946 132.394,123.025 131.575,122.994 131.339,123.151 
 			132.708,124.883 133.732,124.962 		"/>
 		
-			<polygon id="Kirchberg" class="gem_energietal" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			<polygon id="04" class="gem_energietal" onclick="showAttributes(evt)" fill="#F39200" stroke="#F6F6F6" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 			122.693,25.34 122.706,26.856 123.12,27.24 123.809,27.948 125.009,29.287 126.132,30.783 127.411,32.575 128.71,34.897 
 			129.655,37.043 130.954,39.976 132.076,42.2 133.297,44.129 133.735,44.442 134.422,44.505 134.91,44.616 134.96,44.68 
 			135.172,44.708 135.51,44.59 135.75,44.501 135.653,44.312 135.623,44.024 135.84,43.749 136.163,43.604 136.183,43.581 
@@ -12495,30 +12534,27 @@
 			c0,0,19.764-1.732,31.081-15.255"/>
 	</g>
 </g>
-		</svg></p>
+		</svg>
+		</p>
 		</div>
-		<div class="col-md-4" id="overview"><h3>Übersicht<h3></div>
+		<div class="col-md-4" id="overview"><h3>Übersicht<h3>
 			<img src="../images/logo_energietal.jpg" alt="Logo Energietal" width="245px"></img>
 			<img src="../images/uebersicht.png" alt="Übersicht" width="240px"></img>
+		</div>
+		<div class="col-md-4" id="info"><h3>Information</h3>
+			<div class="row">
+				<div class="col-md-2"><img src="notfound.png" onerror="this.style.display='none'" id="gemeindewappen"></img> </div>
+				<div class="col-md-2"><p id="gemeindename"></p></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4" id="wappen">Details</div>
+			</div>	
 		
-		<div class="col-md-4" id="info"><h3>Information</h3></div>
-		<p id="placeholder"></p>
-	    <script>
-  jQuery.getJSON('/../data/data.json', function(data) {
-   alert("success");  
-       // var output="<ul>";
-       // for (var i in data.users) {
-       //     output+=
-			//"<li>" 
-		//	+ data.users[i].firstName + " " + data.users[i].lastName + "--" + data.users[i].joined.month;
-			//+"</li>";
+		
+		<p><text class="label" id="country_name" x="10" y="10"> </text></p>
+		</div>
 
-       //output+="</ul>";
-   //     document.getElementById("placeholder").innerHTML=output;
-  });
-    </script>
-</div>	
-	
+</div>
 </div> <!-- outermost container -->
 	
 	
@@ -12528,7 +12564,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
 	<script src="../js/bootstrap.min.js"></script>	
     <script src="../js/jasny-bootstrap.min.js"></script>
-    <script src="../js/offcanvas.js"></script>	
+    <script src="../js/offcanvas.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
 </body>
 
 <footer>

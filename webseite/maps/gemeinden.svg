@@ -1,6 +1,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  x="0px" y="0px"
 	 width="900px" height="900px" viewBox="0 0 841.89 595.276" preserveAspectRatio="xMinYMin meet" xml:space="preserve">
+
 <g id="Basiskarte">
 	<defs>
 		<polygon id="SVGID_1_" points="560.541,552.325 18.648,552.388 18.648,19.278 560.541,19.214 		"/>

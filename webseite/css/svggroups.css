@@ -26,3 +26,7 @@ g.hover_group .gem_energietal  {
 text {
     pointer-events: none;
 }
+
+#gemeindename {
+	padding-left: 50px;
+}
